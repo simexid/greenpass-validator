@@ -1,6 +1,7 @@
 # greenpass-validator
 
-GreenPass validator project - both FrontEnd and BackEnd. Ready to use application on Docker
+GreenPass validator project - both FrontEnd and BackEnd. Ready to use application on Docker\
+Running on [Simexid greenpass validator](https://greenpassvalidator.simexid.org)
 
 ## greenpass-validator-fe
 
@@ -26,4 +27,9 @@ Please note that the default port for FE and BE application are different when r
 **HTTPS**\
 The application must run in SSL mode becouse some browser block camera access on unsecure connection
 
+## License
+Released under GNU GPL v3, check LICENSE file
+
+
+**Author: [SIMEXID](www.simexid.org)**
 
