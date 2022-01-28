@@ -31,5 +31,5 @@ The application must run in SSL mode becouse some browser block camera access on
 Released under GNU GPL v3, check LICENSE file
 
 
-**Author: [SIMEXID](www.simexid.org)**
+**Author:** [Simexid](https://www.simexid.org)
 
