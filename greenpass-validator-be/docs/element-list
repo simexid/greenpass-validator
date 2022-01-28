@@ -1,0 +1,8 @@
+org.simexid.greenpassvalidator
+org.simexid.greenpassvalidator.command
+org.simexid.greenpassvalidator.model
+org.simexid.greenpassvalidator.model.data
+org.simexid.greenpassvalidator.model.greenpass
+org.simexid.greenpassvalidator.model.rest
+org.simexid.greenpassvalidator.rest
+org.simexid.greenpassvalidator.util

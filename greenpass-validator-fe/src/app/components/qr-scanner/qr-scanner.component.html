@@ -1,0 +1,22 @@
+
+
+    <div id="reader"></div>
+
+    <div *ngIf="!isInit" class="row">
+        <div class="col-12 mt-5 text-center">
+            <p>{{'QRSCANNER.INFO_SCAN' | translate}}</p>
+            <p><b>{{'QRSCANNER.CLICK_IMAGE' | translate}}</b></p>
+            <div class="mt-3">
+                <img width="100" (click)="start()" src="../../../assets/img/qr-code-scan.svg">
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-6 text-center">
+            <button *ngIf="isInit" class="btn btn-danger" (click)="stopCamera()">{{'QRSCANNER.STOP' | translate}}</button>
+        </div>
+        <div class="col-6 text-center">
+            <button *ngIf="isInit && multipleCamera>1" class="btn btn-pit-secondary"
+                (click)="changeCamera()">{{'QRSCANNER.CHANGE' | translate}}</button>
+        </div>
+    </div>

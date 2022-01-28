@@ -1,0 +1,27 @@
+{
+    "MAIN": {
+        "TITLE": "Greenpass Validator"
+    },
+    "QRSCANNER": {
+        "INFO_SCAN": "Per poter scannerizzare il codice QR ti chiederemo accesso alla fotocamera.",
+        "CLICK_IMAGE": "CLICCA SULL'IMMAGINE SOTTO PER INIZIARE",
+        "STOP": "STOP",
+        "CHANGE": "CAMBIA"
+    },
+    "SHOWDATA": {
+        "WAITING": "In attesa di scansione",
+        "INVALID": "NON VALIDO",
+        "VALID": "VALIDO",
+        "BOOSTER": "BOOSTER",
+        "DATE": "Date",
+        "STATE": "Stato",
+        "TYPE": "Tipo",
+        "NAME": "Nominativo"
+    },
+    "ERROR": {
+        "CONNECTION": "Errore di connessione",
+        "QR_READER": "Errore nella lettura del QR CODE",
+        "CAMERA_ACCESS": "Errore di accesso alla fotocamera",
+        "CAMERA_AUTHORIZATION": "Devi concedere i permessi per poter scansionare il codice a barre"
+    }
+}

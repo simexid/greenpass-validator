@@ -1,0 +1,17 @@
+
+version: '3'
+
+services:
+  backendserver:
+    build: ./greenpass-validator-be/
+    ports:
+           - "8087:8080"
+    restart: always
+  frontend:
+    build: ./greenpass-validator-fe/
+    links:
+           - "backendserver"
+    depends_on:
+           - "backendserver"
+    ports:
+           - "89:80"    

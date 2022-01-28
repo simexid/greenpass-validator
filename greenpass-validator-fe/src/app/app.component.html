@@ -1,0 +1,12 @@
+<!-- <router-outlet></router-outlet> -->
+<div class="container">
+
+    <div [hidden]="scanActive" class="row mt-2">
+        <div class="col-sm-12 text-center">
+            <h3>Greenpass Validator</h3>
+        </div>
+    </div>
+
+    <app-show-data [hidden]="scanActive" [data]="data"></app-show-data>
+    <app-qr-scanner (isScanning)="inScanning($event)" (output)="updateData($event)"></app-qr-scanner>
+</div>
