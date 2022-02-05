@@ -77,7 +77,7 @@ export class QrScannerComponent {
             // CHIAMA SERVIZIO E MOSTRA DATI
             this.http.check(qrCodeMessage).subscribe(res=>{
               this.data=res;
-                this.data.isValid = true;
+                this.data.isValid = this.checkIfValid(this.data);
                 this.output.emit(this.data);
             }, error => {
               this.data.isValid = false;
@@ -152,6 +152,40 @@ export class QrScannerComponent {
     this.data = new GreenPassModel();
       this.output.emit(this.data);
     this.attempt=1;
+  }
+
+  /**
+   * Method to verify if certificate is valid
+   */
+  public checkIfValid(data: GreenPassModel): boolean {
+    if (data && data.isValid!==undefined && !data.isValid )return false;
+    const today = new Date();
+    today.setHours(23);
+    today.setMinutes(59);
+    let maxDate: Date = data.date;
+    if (data.type = 'RECOVERY') {
+      return true;
+    } else if (data.type = 'TEST') {
+      data.productName.includes('Rapid') ? maxDate.setDate(data.date.getDate()+2) : maxDate.setDate(data.date.getDate()+3);
+      if (today > maxDate) {
+        return false;
+      } else {
+        return true;
+      }
+    } if (data.type = 'VACCINE') {
+      if (data.dose > 2) {
+        return true;
+      } else {
+        maxDate.setMonth(data.date.getMonth()+6);
+        if (today > maxDate) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+    } else {
+      return false;
+    }
   }
 
 }
