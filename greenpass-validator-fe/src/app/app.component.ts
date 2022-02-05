@@ -16,23 +16,29 @@ export class AppComponent {
   scanActive: Boolean = false;
 
   /**
-   * 
+   * Cnstructor
    * @param translate for translation support. Create your custom language under assets/i18n
    */
-  constructor(translate: TranslateService) {
-    /**
-     * Default language
-     */
-    translate.setDefaultLang('it');
+  constructor(private translate: TranslateService) {
 
     /**
-     * Language to use
+     * Identify language. Set to it if italian recognized otherwise set to english.
      */
-    translate.use('it');
+    const userLang = navigator.language;
+    switch (userLang) {
+      case 'it-IT':
+      case 'IT':
+      case 'it':
+        this.setLanguage('it');
+        break;
+      default:
+        this.setLanguage('en');
+    }
+
 }
 
   /**
-   * 
+   * Update the data in page
    * @param event Greenpass data received by qr-scanner component
    */
   updateData(event: GreenPassModel) {
@@ -40,10 +46,19 @@ export class AppComponent {
   }
 
   /**
-   * 
+   * Method user to retrieve the event for camere running
    * @param event indicates if camera is active
    */
   inScanning(event: Boolean) {
     this.scanActive = event;
+  }
+
+  /**
+   * Method used to set the language
+   * @param lang language to set
+   */
+  setLanguage(lang: string) {
+    this.translate.setDefaultLang('lang');
+    this.translate.use('lang');
   }
 }
