@@ -4,7 +4,7 @@
             <div *ngIf="stato=='undefined'">{{'SHOWDATA.WAITING' | translate}}</div>
             <h3 *ngIf="stato=='invalid'">{{'SHOWDATA.INVALID' | translate}}</h3>
             <div *ngIf="stato=='valid'">
-                <p><b>{{'SHOWDATA.STATE' | translate}}</b><br>{{'SHOWDATA.VALID' | translate}}<span *ngIf="data.overallDose && data.overallDose==3">{{'SHOWDATA.BOOSTER' | translate}}</span></p>
+                <p><b>{{'SHOWDATA.STATE' | translate}}</b><br>{{'SHOWDATA.VALID' | translate}}<span *ngIf="data.overallDose && data.overallDose==3"> {{'SHOWDATA.BOOSTER' | translate}}</span></p>
                 <p><b>{{'SHOWDATA.TYPE' | translate}}</b><br>{{data.type}} - {{data.vendorName}} - {{data.productName}}</p>
                 <p><b>{{'SHOWDATA.NAME' | translate}}</b><br>{{data.name}} {{data.surname}}</p>
                 <p><b>{{'SHOWDATA.DATE' | translate}}</b><br>{{data.date| date: 'dd-MM-YYYY'}}</p>
