@@ -58,7 +58,7 @@ export class AppComponent {
    * @param lang language to set
    */
   setLanguage(lang: string) {
-    this.translate.setDefaultLang('lang');
-    this.translate.use('lang');
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
   }
 }

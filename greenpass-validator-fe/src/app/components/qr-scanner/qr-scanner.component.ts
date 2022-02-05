@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter  } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {Html5Qrcode} from "html5-qrcode"
+import {Html5Qrcode, Html5QrcodeSupportedFormats} from "html5-qrcode"
 import { HttpconfigService } from 'src/app/config/httpconfig.service';
 import { GreenPassModel } from 'src/app/model/GreenPassModel';
 
@@ -48,7 +48,9 @@ export class QrScannerComponent {
             }
           });
         }
-        this.reader = new Html5Qrcode("reader");
+        this.reader = new Html5Qrcode("reader", 
+        { formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ], 
+          verbose: false });
         this.initScanner();
       }
     }).catch(err => {
@@ -64,8 +66,8 @@ export class QrScannerComponent {
     this.reader.start(
       this.cameras[this.selectedCamera].id,     
       {
-        fps: 10,    
-        qrbox: 250         
+        fps: 5,
+        qrbox: { width: 250, height: 250 }
       },
       qrCodeMessage => {
         if (qrCodeMessage.search("HC1:")>-1) {
