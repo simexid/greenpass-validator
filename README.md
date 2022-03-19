@@ -7,7 +7,7 @@ Running on [Simexid greenpass validator](https://greenpassvalidator.simexid.org)
 
 Angular project
 
-Use `npm run start:net` or `ng serve --host 0.0.0.0 --ssl --proxy-config proxy.conf.json` in order to start the application locally with proxy configuration. Default ser on proxy.conf.json redirect all traffico to /api to port :8080. After start reach the application on [https://127.0.0.1:4200](https://127.0.0.1:4200).
+Use `npm run start:net` or `ng serve --host 0.0.0.0 --ssl --proxy-config proxy.conf.json` in order to start the application locally with proxy configuration. Default server configuration on proxy.conf.json redirect all traffic to /api to port :8080. After start reach the application on [https://127.0.0.1:4200](https://127.0.0.1:4200).
 
 ## greenpass-validator-be
 
